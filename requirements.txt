@@ -1,8 +1,10 @@
-numpy
+flask
 pandas
+numpy
 scikit-learn
-matplotlib
-seaborn
 xgboost
 lightgbm
 catboost
+matplotlib
+seaborn
+gunicorn
