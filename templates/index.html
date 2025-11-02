@@ -48,14 +48,14 @@
             text-transform: capitalize;
         }
         
-        input {
+        input, select {
             padding: 10px;
             border: 2px solid #ddd;
             border-radius: 8px;
             font-size: 14px;
         }
         
-        input:focus {
+        input:focus, select:focus {
             outline: none;
             border-color: #667eea;
         }
@@ -123,12 +123,123 @@
         
         <form id="predictionForm">
             <div class="form-grid">
-                {% for feature in features %}
+                <!-- Age -->
                 <div class="form-group">
-                    <label for="{{ feature }}">{{ feature.replace('_', ' ').title() }}</label>
-                    <input type="number" step="0.01" id="{{ feature }}" name="{{ feature }}" required>
+                    <label for="age">Age</label>
+                    <input type="number" step="1" id="age" name="age" required>
                 </div>
-                {% endfor %}
+
+                <!-- Gender -->
+                <div class="form-group">
+                    <label for="gender">Gender</label>
+                    <select id="gender" name="gender" required>
+                        <option value="">Select Gender</option>
+                        <option value="0">Female</option>
+                        <option value="1">Male</option>
+                    </select>
+                </div>
+
+                <!-- BMI -->
+                <div class="form-group">
+                    <label for="bmi">BMI</label>
+                    <input type="number" step="0.01" id="bmi" name="bmi" required>
+                </div>
+
+                <!-- Alcohol Consumption -->
+                <div class="form-group">
+                    <label for="alcohol_consumption">Alcohol Consumption</label>
+                    <select id="alcohol_consumption" name="alcohol_consumption" required>
+                        <option value="">Select Alcohol Consumption</option>
+                        <option value="0">None</option>
+                        <option value="1">Light (1-2 drinks/week)</option>
+                        <option value="2">Moderate (3-7 drinks/week)</option>
+                        <option value="3">Heavy (8+ drinks/week)</option>
+                    </select>
+                </div>
+
+                <!-- Smoking Status -->
+                <div class="form-group">
+                    <label for="smoking_status">Smoking Status</label>
+                    <select id="smoking_status" name="smoking_status" required>
+                        <option value="">Select Smoking Status</option>
+                        <option value="0">Non-Smoker</option>
+                        <option value="1">Smoker</option>
+                    </select>
+                </div>
+
+                <!-- Hepatitis B -->
+                <div class="form-group">
+                    <label for="hepatitis_b">Hepatitis B</label>
+                    <select id="hepatitis_b" name="hepatitis_b" required>
+                        <option value="">Select Hepatitis B Status</option>
+                        <option value="0">No</option>
+                        <option value="1">Yes</option>
+                    </select>
+                </div>
+
+                <!-- Hepatitis C -->
+                <div class="form-group">
+                    <label for="hepatitis_c">Hepatitis C</label>
+                    <select id="hepatitis_c" name="hepatitis_c" required>
+                        <option value="">Select Hepatitis C Status</option>
+                        <option value="0">No</option>
+                        <option value="1">Yes</option>
+                    </select>
+                </div>
+
+                <!-- Liver Function Score -->
+                <div class="form-group">
+                    <label for="liver_function_score">Liver Function Score</label>
+                    <input type="number" step="0.01" id="liver_function_score" name="liver_function_score" required>
+                </div>
+
+                <!-- Alpha Fetoprotein Level -->
+                <div class="form-group">
+                    <label for="alpha_fetoprotein_level">Alpha Fetoprotein Level</label>
+                    <input type="number" step="0.01" id="alpha_fetoprotein_level" name="alpha_fetoprotein_level" required>
+                </div>
+
+                <!-- Cirrhosis History -->
+                <div class="form-group">
+                    <label for="cirrhosis_history">Cirrhosis History</label>
+                    <select id="cirrhosis_history" name="cirrhosis_history" required>
+                        <option value="">Select Cirrhosis History</option>
+                        <option value="0">No</option>
+                        <option value="1">Yes</option>
+                    </select>
+                </div>
+
+                <!-- Family History Cancer -->
+                <div class="form-group">
+                    <label for="family_history_cancer">Family History Cancer</label>
+                    <select id="family_history_cancer" name="family_history_cancer" required>
+                        <option value="">Select Family History</option>
+                        <option value="0">No</option>
+                        <option value="1">Yes</option>
+                    </select>
+                </div>
+
+                <!-- Physical Activity Level -->
+                <div class="form-group">
+                    <label for="physical_activity_level">Physical Activity Level</label>
+                    <select id="physical_activity_level" name="physical_activity_level" required>
+                        <option value="">Select Activity Level</option>
+                        <option value="0">Sedentary</option>
+                        <option value="1">Light</option>
+                        <option value="2">Moderate</option>
+                        <option value="3">Active</option>
+                    </select>
+                </div>
+
+                <!-- Diabetes -->
+                <div class="form-group">
+                    <label for="diabetes">Diabetes</label>
+                    <select id="diabetes" name="diabetes" required>
+                        <option value="">Select Diabetes Status</option>
+                        <option value="0">No</option>
+                        <option value="1">Yes</option>
+                    </select>
+                </div>
             </div>
             
             <button type="submit" class="btn">Predict</button>
